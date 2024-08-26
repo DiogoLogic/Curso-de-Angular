@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
+  tipo:string = "Simples"
+  preco = 200;
+
+
+getFullPrice(){
+  return 'R$' + this.preco + ',00/Mês';
+}
+
 }
