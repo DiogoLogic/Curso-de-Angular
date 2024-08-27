@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Fundamentos-Angular-Componentes": {
+    "projeto-components": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,21 +17,28 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fundamentos-angular-componentes",
+            "outputPath": "dist/projeto-components",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -60,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Fundamentos-Angular-Componentes:build:production"
+              "browserTarget": "projeto-components:build:production"
             },
             "development": {
-              "browserTarget": "Fundamentos-Angular-Componentes:build:development"
+              "browserTarget": "projeto-components:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Fundamentos-Angular-Componentes:build"
+            "browserTarget": "projeto-components:build"
           }
         },
         "test": {
@@ -82,12 +93,14 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -96,6 +109,6 @@
     }
   },
   "cli": {
-    "analytics": "6d928176-0571-43d0-9597-27bf7da00859"
+    "analytics": "57b1a800-56fc-4c19-b0ab-1f57486598ed"
   }
 }

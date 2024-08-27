@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CardsModule } from './cards/cards.module';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
+    BrowserModule,
     CardsModule,
-    BrowserModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
